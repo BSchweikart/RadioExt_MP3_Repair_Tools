@@ -1,14 +1,16 @@
 # RadioExt MP3 Tools
 
-A collection of tools to clean up MP3 files and generate metadata for use with the
+A collection of tools to clean up MP3 files and generate metadata for use with the RadioEXT mod for Cyberpunk 2077.
 
 ### ❗ Disclamer
 
-This is not a 100% fix. This could fully fix some people's issues fully.
+This toolset is not a guaranteed 100% fix for every setup or audio file.
 
-Some might see no change in play back meaning issue still exists.
+    ✅ Some users may find it fully resolves their playback issues in RadioExt
 
-Some might see some files playing correctly and other files still have play back issues.
+    ⚠️ Others may notice no change in behavior due to deeper mod, system, or encoding issues
+
+    🔁 Some may see partial success, where certain songs work and others still fail or fall back
 
 ### Author's github
 
