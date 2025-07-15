@@ -154,7 +154,10 @@ Happy broadcasting! 🎧
 
 ## 🛡️ License
 
-This tool is licensed under the **GNU General Public License v3.0**.  
+This tool is licensed under the **GNU General Public License v3.0**.
+
+This file is provided to comply with the **LGPL 2.1 license requirements** of the LAME encoder.
+
 You are free to use, modify, and distribute it under the terms of the GPL.
 
 See [`LICENSE`](LICENSE) for full details.
@@ -166,13 +169,13 @@ This tool includes open-source binaries from the following projects:
 - Distributed under the **GNU General Public License v3 (GPL v3)**
 - Downloaded from:  
   [https://www.gyan.dev/ffmpeg/builds/ffmpeg-n7.1-latest-win64-gpl-7.1.zip](https://www.gyan.dev/ffmpeg/builds/ffmpeg-n7.1-latest-win64-gpl-7.1.zip)
-- See [`LICENSE`](LICENSE) for the full license text.
+- See [`LICENSE`](LICENSE) or (https://www.gnu.org/licenses/gpl-3.0.txt) for the full license text.
 
 ### 🔹 [LAME MP3 Encoder](https://lame.sourceforge.io/) — `lame.exe`
 - Distributed under the **LGPL v2.1** license
 - Source and license details:  
   [https://www.rarewares.org/mp3-lame-bundle.php](https://www.rarewares.org/mp3-lame-bundle.php)
-- See [`LICENSE LAMEE`](LICENSE_lame) for full license text.
+- See [`LICENSE LAMEE`](LICENSE_lame) or (https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) for full license text.
 
 ### 🔹 Batch Script (`generate_songInfos.bat`)
 - Provided under the **GNU General Public License v3**
