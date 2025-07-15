@@ -152,6 +152,13 @@ Happy broadcasting! 🎧
 
 ## 📜 License Notice
 
+## 🛡️ License
+
+This tool is licensed under the **GNU General Public License v3.0**.  
+You are free to use, modify, and distribute it under the terms of the GPL.
+
+See [`LICENSE`](LICENSE) for full details.
+
 This tool includes open-source binaries from the following projects:
 
 ### 🔹 [FFmpeg Project](https://ffmpeg.org) — `ffmpeg.exe`, `ffprobe.exe`
@@ -159,13 +166,13 @@ This tool includes open-source binaries from the following projects:
 - Distributed under the **GNU General Public License v3 (GPL v3)**
 - Downloaded from:  
   [https://www.gyan.dev/ffmpeg/builds/ffmpeg-n7.1-latest-win64-gpl-7.1.zip](https://www.gyan.dev/ffmpeg/builds/ffmpeg-n7.1-latest-win64-gpl-7.1.zip)
-- See `LICENSE_ffmpeg.txt` for the full license text.
+- See [`LICENSE`](LICENSE) for the full license text.
 
 ### 🔹 [LAME MP3 Encoder](https://lame.sourceforge.io/) — `lame.exe`
 - Distributed under the **LGPL v2.1** license
 - Source and license details:  
   [https://www.rarewares.org/mp3-lame-bundle.php](https://www.rarewares.org/mp3-lame-bundle.php)
-- See `LICENSE_lame.txt` for full license text.
+- See [`LICENSE LAMEE`](LICENSE_lame) for full license text.
 
 ### 🔹 Batch Script (`generate_songInfos.bat`)
 - Provided under the **GNU General Public License v3**
@@ -181,8 +188,8 @@ If you modify or distribute the batch script alongside FFmpeg GPL binaries, your
 ## ✅ Distributing This Tool
 
 You may freely bundle and redistribute this tool as long as you:
-- Include the **GPL license text** for FFmpeg (`LICENSE_ffmpeg.txt`)
-- Include the **LGPL license text** for LAME (`LICENSE_lame.txt`)
+- Include the **GPL license text** for FFmpeg [`LICENSE`](LICENSE)
+- Include the **LGPL license text** for LAME [`LICENSE LAME`](LICENSE_lame)
 - Do not remove attribution or alter licensing terms
 
 ---
