@@ -2,7 +2,12 @@
 
 A collection of tools to clean up MP3 files and generate metadata for use with the 
 [RadioExt mod](https://github.com/justarandomguyintheinternet/CP77_radioExt) 
-(https://www.nexusmods.com/cyberpunk2077/mods/4591) in **Cyberpunk 2077**.
+
+### 🎵 What is RadioExt?
+
+[RadioExt on Nexus Mods](https://www.nexusmods.com/cyberpunk2077/mods/8977)
+
+A Cyberpunk 2077 mod that allows custom radio stations using MP3 files. This tool ensures your tracks play correctly and avoid fallback issues.
 
 ---
 
@@ -19,6 +24,23 @@ mp3-fixer-tools/
 ├── mp3s_cleaned/                   # Cleaned MP3s will appear here
 ├── json_file_complete/             # songInfos.json will be placed here
 ```
+
+## 🔽 Download the Latest Release
+
+👉 [**Click here to download the latest tools (.zip)**](https://github.com/BSchweikart/RadioExt_MP3_Repair_Tools/releases/latest)
+
+### 🔧 Included Tools
+- Batch tools
+   - [`generate_songInfos.bat`](https://github.com/BSchweikart/RadioExt_MP3_Repair_Tools/blob/v1.0.0/radioEXT-mp3-fixer-json-create/generate_songInfos.bat)
+   - [`rebuild_all_mp3s.bat`](https://github.com/BSchweikart/RadioExt_MP3_Repair_Tools/blob/v1.0.0/radioEXT-mp3-fixer-json-create/rebuild_all_mp3s.bat)
+
+- These exe's are bundled inside the ZIP, but you may also download them yourself: You may replace the included exe's with ones you trust if preferred.
+- [FFmpeg Official Site](https://ffmpeg.org/download.html)
+- [Gyan.dev FFmpeg Builds](https://www.gyan.dev/ffmpeg/builds/)
+- [LAME MP3 Encoder (SourceForge)](https://lame.sourceforge.io/download.php)
+
+- Template folders (`mp3s_to_fix`, `json_file_complete`)
+- Everything you need in one package.
 
 ---
 
