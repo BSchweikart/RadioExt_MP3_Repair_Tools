@@ -1,6 +1,17 @@
 # RadioExt MP3 Tools
 
-A collection of tools to clean up MP3 files and generate metadata for use with the 
+A collection of tools to clean up MP3 files and generate metadata for use with the
+
+### ❗ Disclamer
+
+This is not a 100% fix. This could fully fix some people's issues fully.
+
+Some might see no change in play back meaning issue still exists.
+
+Some might see some files playing correctly and other files still have play back issues.
+
+### Author's github
+
 [RadioExt mod](https://github.com/justarandomguyintheinternet/CP77_radioExt) 
 
 ### 🎵 What is RadioExt?
