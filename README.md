@@ -18,7 +18,7 @@ This toolset is not a guaranteed 100% fix for every setup or audio file.
 
 ### 🎵 What is RadioExt?
 
-[RadioExt on Nexus Mods](https://www.nexusmods.com/cyberpunk2077/mods/8977)
+[RadioExt on Nexus Mods](https://www.nexusmods.com/cyberpunk2077/mods/4591)
 
 A Cyberpunk 2077 mod that allows custom radio stations using MP3 files. This tool ensures your tracks play correctly and avoid fallback issues.
 
