@@ -1,0 +1,13 @@
+Make a copy of the file from you mod folder (NOT VORTEX manage) before replacing can just move to your desktop.
+DO NOT DEPLOY THROUGH VORTEX JUST START THE GAME.
+
+I highly recommended this mod for testing.
+Skip Radio Song - https://www.nexusmods.com/cyberpunk2077/mods/6170
+
+
+Only this line was added in for debug. lines 132 - 135
+
+           -- Print line added for debug of song ticks
+            print("[RadioExt Debug] Song: " .. self.currentSong.path ..
+                 " | Tick: " .. tostring(self.tick) ..
+                 " / " .. tostring(self.currentSong.length))
