@@ -1,3 +1,6 @@
+I would only use this for debug not sure what impact this can have the longer you play only use for debug.
+Once you have your mp3s working revert back or commit out those lines.
+
 Make a copy of the file from you mod folder (NOT VORTEX manage) before replacing can just move to your desktop.
 DO NOT DEPLOY THROUGH VORTEX JUST START THE GAME.
 
