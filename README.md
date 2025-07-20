@@ -1,16 +1,11 @@
-# RadioExt MP3 Tools
+### ❗  IN THE PROCESS OF A FULL UPDATE FULL BAT FILES ARE BEING UPDATED A FULL REWORK. SO FAR THIS IS WORKING ON MY END THIS README WILL BE UPDATED WITH WORKING LINKS  ❗
 
-A collection of tools to clean up MP3 files and generate metadata for use with the RadioEXT mod for Cyberpunk 2077.
+# 🎧 RadioExt Fixer Utilities
 
-### ❗ Disclamer
+A simple utility toolkit for preparing MP3 files and generating the required JSON metadata.
+A songInfos json can also be created.
 
-This toolset is not a guaranteed 100% fix for every setup or audio file.
-
-    ✅ Some users may find it fully resolves their playback issues in RadioExt
-
-    ⚠️ Others may notice no change in behavior due to deeper mod, system, or encoding issues
-
-    🔁 Some may see partial success, where certain songs work and others still fail or fall back
+Happy modding, chooms. 💿🎙️📡
 
 ### Author's github
 
@@ -18,25 +13,76 @@ This toolset is not a guaranteed 100% fix for every setup or audio file.
 
 ### 🎵 What is RadioExt?
 
-[RadioExt on Nexus Mods](https://www.nexusmods.com/cyberpunk2077/mods/4591)
+[RadioExt on Nexus Mods](https://www.nexusmods.com/cyberpunk2077/mods/8977)
 
 A Cyberpunk 2077 mod that allows custom radio stations using MP3 files. This tool ensures your tracks play correctly and avoid fallback issues.
 
 ---
 
-## 📂 Folder Structure
+### ❗ Disclamer
+
+This toolset is not a guaranteed 100% fix.
+
+- ✅ Some users may see fully working custom stations
+- ⚠️ Others may need to troubleshoot deeper mod or system issues
+- 🔁 Still useful for prepping your station in a clean, standard format
+
+---
+
+## 🛡️ Antivirus Notice
+
+Some antivirus software may flag `.bat` files or bundled `.exe` tools like `ffmpeg.exe` or `lame.exe` as suspicious. This is a common false positive for:
+
+- 🟨 Batch scripts (`.bat`) that automate file changes
+- 🟦 Open-source command-line tools such as FFmpeg or LAME
+
+### ✅ Safety and Verification
+
+These tools are open-source and widely used. You can verify their integrity at the following sources:
+
+- [FFmpeg Official Site](https://ffmpeg.org/)
+- [Gyan.dev FFmpeg Builds](https://www.gyan.dev/ffmpeg/builds/)
+- [LAME MP3 Encoder](https://lame.sourceforge.io/)
+
+If you’d like extra peace of mind, we recommend:
+
+- Running a scan on the `.zip` or individual tools with your antivirus
+- Uploading `.bat` files or executables to [VirusTotal](https://www.virustotal.com/) for manual scanning
+
+> ✅ All `.bat` files in this toolkit have been tested and passed local scans using **Bitdefender** with no detections.
+
+If your antivirus flags a false positive:
+- Create an exception for this folder/toolkit
+- Or clone/download the `.bat` files directly from the official GitHub repository
+
+---
+
+## 📦 What’s Included?
+
+| Script                    | Purpose |
+|---------------------------|---------|
+| `fix_radioEXTmp3s.bat`    | Cleans your MP3s for the mod (bitrate, metadata, headers)  
+| `build_metadata.bat`      | Prompts you for station details and builds `metadata.json`  
+| `generate_songInfos.bat`  | Scans cleaned MP3s and builds `songInfos.json`  
+| `create_station.bat`      | Guides you through the full setup and generates a Vortex-ready `.zip` mod package  
+
+---
+
+## 🗂 Folder Structure (Auto-created by scripts)
 
 ```
-mp3-fixer-tools/
-├── rebuild_all_mp3s.bat            # Main MP3 fixer (converts MP3 > WAV > MP3 clean)
-├── generate_songInfos.bat          # Generates songInfos.json from cleaned MP3s
-├── ffmpeg.exe                      # Required for WAV conversion
-├── ffprobe.exe                     # Required for generating songInfos.json
-├── lame.exe                        # Required for final MP3 encoding
-├── mp3s_to_fix/                    # Place original/broken MP3s here also used for json file creation.
-├── mp3s_cleaned/                   # Cleaned MP3s will appear here
-├── json_file_complete/             # songInfos.json will be placed here
+radioEXT_fixer_utilities/
+├── completed_files/          # Cleaned MP3s + final JSONs (output folder)
+├── mp3s_to_fix/              # Drop your original MP3s here
+├── logs/                     # All log files from batch scripts
+├── metadata_template/        # Contains default metadata.json
+├── *.bat                     # All scripts listed above
+├── ffmpeg.exe                # Must be present here
+├── ffprobe.exe               # Required for songInfos
+├── lame.exe                  # Required for LAME re-encoding
 ```
+
+---
 
 ## 🔽 Download the Latest Release
 
@@ -44,15 +90,17 @@ mp3-fixer-tools/
 
 ### 🔧 Included Tools
 - Batch tools
-   - [`generate_songInfos.bat`](https://github.com/BSchweikart/RadioExt_MP3_Repair_Tools/blob/v1.0.0/radioEXT-mp3-fixer-json-create/generate_songInfos.bat)
-   - [`rebuild_all_mp3s.bat`](https://github.com/BSchweikart/RadioExt_MP3_Repair_Tools/blob/v1.0.0/radioEXT-mp3-fixer-json-create/rebuild_all_mp3s.bat)
+   - [`create_station.bat`]()
+   - [`fix_radioEXTmp3s.bat`]()
+   - [`build_metadata.bat`]()
+   - [`generate_songInfos.bat`]()
 
 - These exe's are bundled inside the ZIP, but you may also download them yourself: You may replace the included exe's with ones you trust if preferred.
 - [FFmpeg Official Site](https://ffmpeg.org/download.html)
 - [Gyan.dev FFmpeg Builds](https://www.gyan.dev/ffmpeg/builds/)
 - [LAME MP3 Encoder (SourceForge)](https://lame.sourceforge.io/download.php)
 
-- Template folders (`mp3s_to_fix`, `json_file_complete`)
+- Template folders (`mp3s_to_fix`, `completed_files`)
 - Everything you need in one package.
 
 ---
@@ -75,91 +123,130 @@ Download and place the following executables **in the same folder as the `.bat` 
 
 ---
 
-## 🧾 Generate `songInfos.json` (Recommended First Step)
+## 🚀 Getting Started (Recommended Path) for Beginners
 
-### 🔹 This might be all you need!
+### 🎮 Use `create_station.bat` — One script to do it all
 
-If your songs play correctly in-game but RadioExt logs:
+If you're new to RadioExt, this script handles **everything for you**:
+
+Just run:
 ```
-[RadioExt] Invalid length for song: ...
+create_station.bat
 ```
-...you can skip re-encoding and just create a `songInfos.json` to override the fallback behavior.
 
-This is the **quickest and cleanest solution** for most users with working MP3s but minor metadata issues.
+It will guide you through:
 
+1. 🗃️ Creating all needed folders
+2. 🎵 Cleaning your MP3s (`fix_radioEXTmp3s.bat`)
+3. 🧾 Generating `metadata.json` from a template (`build_metadata.bat`)
+4. 📄 Creating `songInfos.json` from your cleaned MP3s
+5. 🎙️ Naming your station
+6. 📦 Packaging everything into:
+   - A Vortex-compatible `.zip`
+   - A standard folder you can install manually
 
-If you're worried about fallback behavior in RadioExt or want to guarantee song lengths:
+When complete,
+You can immediately:
+- Drop the `.zip` into Vortex  
+- Or install the folder manually
+The final mod structure will look like this and inside the `completed_files` folder:
 
-1. After fixing MP3s, run:
-   You can place your MP3s right into cleaned to just get the json file.
-   ```
-   generate_songInfos.bat
-   ```
-2. The file `songInfos.json` will appear in `json_file_complete/`
-3. Copy that file into your custom station folder:
-
-**Full path example:**
 ```
-Cyberpunk 2077/
-└── bin/
-    └── x64/
-        └── plugins/
-            └── cyber_engine_tweaks/
-                └── mods/
-                    └── radioExt/
-                        └── radios/
-                            └── YourStationName/
-                                ├── songInfos.json ✅
-                                ├── YourSong1.mp3
-                                ├── YourSong2.mp3
+completed_files\
+├── YourStationName\            ← 📁 Manual install folder
+│   └── bin\
+│       └── x64\
+│           └── plugins\
+│               └── cyber_engine_tweaks\
+│                   └── mods\
+│                       └── radioExt\
+│                           └── YourStationName\
+│                               ├── metadata.json
+│                               ├── songInfos.json
+│                               └── *.mp3
+└── YourStationName.zip         ← 📦 Vortex-compatible ZIP
+
+---
+Manual install
+
 ```
-   ```
-   Cyberpunk 2077/bin/x64/plugins/cyber_engine_tweaks/mods/radioExt/radios/YourStationName/
-   
-   ```
+   - Copy all files starting with bin into radios section of radioEXT mod folder:
+     ```
+     YourStationName/
+     └── bin/
+         └── x64/
+             └── plugins/
+                 └── cyber_engine_tweaks/
+                     └── mods/
+                         └── radioExt/
+                             └── radios/
+                                 └── YourStationName/
+                                     ├── songInfos.json
+                                     ├── metadata.json
+                                     ├── YourSong1.mp3
+                                     ├── YourSong2.mp3
+
+file path:
+
+Cyberpunk 2077/bin/x64/plugins/cyber_engine_tweaks/mods/radioExt/radios/YourStationName/
+---
+
+📝 All steps log to `logs\create_station_bat_log.txt` for easy debugging.
 
 ---
 
-## 🔧 Optional: Re-encode MP3s with LAME (If songInfos.json doesn't solve it)
+## ⚙️ Advanced Usage (Manual Steps)
 
-1. Place your original MP3s into the `mp3s_to_fix/` folder
-2. Run:
-   ```
-   rebuild_all_mp3s.bat
-   ```
-3. Clean files will appear in `mp3s_cleaned/`  
-   → These are ready for use with RadioExt
+For experienced users who want more control, you can run each batch script individually:
 
----
+### 🧪 Step 1: Clean MP3s
+```
+fix_radioEXTmp3s.bat
+```
+- Input: `mp3s_to_fix\`
+- Output: Cleaned MP3s → `completed_files\`
+- Logs: `logs\fix_radioEXTmp3s_bat_log.txt`
 
-## ✅ Notes
+### 📝 Step 2: Create `metadata.json`
+```
+build_metadata.bat
+```
+- Prompts for station name, stream toggle, icon, and optional order
+- Output: `completed_files\metadata.json`
+- Logs: `logs\build_metadata_bat_log.txt`
 
-- Cleaned MP3s will include:
-  - `encoder: LAME3.100`
-  - `probe_score: 100`
-- RadioExt will no longer fallback to 180s if the metadata is clean or songInfos.json is present
-
----
-
-## 🎵 Fallback Option: Use Audacity if LAME Fails
-
-If your file is still giving fallback errors, and `lame.exe` doesn't seem to help, you can try fixing it with [**Audacity**](https://www.audacityteam.org/):
-
-1. Open your MP3 in Audacity
-2. Go to `File → Export → Export as MP3`
-3. Use:
-   - Constant Bitrate: 320 kbps
-   - Sample Rate: 44100 Hz
-   - Channel Mode: Joint Stereo
-4. In the metadata window:
-   - Add a **Title** and **Artist** (or just "Unknown")
-5. Save the file and test it in-game
-
-Audacity re-exports using LAME internally and will reset the broken metadata headers without needing advanced tools.
+### 📄 Step 3: Create `songInfos.json`
+```
+generate_songInfos.bat
+```
+- Reads MP3s in `completed_files\`
+- Calculates song durations in ticks
+- Output: `completed_files\songInfos.json`
+- Logs: `logs\generate_songInfos_bat_log.txt`
 
 ---
 
-Happy broadcasting! 🎧
+## ✅ Advanced Notes
+
+- If you're using a **streaming radio URL** instead of MP3s, `build_metadata.bat` will prompt you for it and update `streamInfo` accordingly
+- `order` inside `metadata.json` is optional, but not all songs should be listed — only highlight tracks you want in a fixed order
+- If you’re using a custom icon atlas, the script lets you enable `customIcon.useCustom: true`
+
+---
+
+## 🧰 Troubleshooting
+
+If `songInfos.json` doesn’t fix RadioExt fallback issues, make sure:
+
+- Your MP3s were cleaned using `fix_radioEXTmp3s.bat`
+- The files use 320kbps CBR, 44.1kHz, Joint Stereo, with stripped tags
+- `ffmpeg.exe`, `ffprobe.exe`, and `lame.exe` are in the root folder
+
+Still stuck? Try exporting the MP3 manually in **Audacity** with:
+- Bitrate: 320kbps
+- Sample rate: 44100 Hz
+- Joint Stereo
+- No ReplayGain or metadata
 
 ---
 
