@@ -235,7 +235,7 @@ generate_songInfos.bat
 
 ## 🧰 Troubleshooting
 
-If `songInfos.json` doesn’t fix RadioExt fallback issues, make sure:
+If `fix_radioEXTmp3.bat` doesn’t fix RadioExt fallback issues, make sure:
 
 - Your MP3s were cleaned using `fix_radioEXTmp3s.bat`
 - The files use 320kbps CBR, 44.1kHz, Joint Stereo, with stripped tags
