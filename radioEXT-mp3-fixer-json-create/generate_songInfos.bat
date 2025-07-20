@@ -1,45 +1,92 @@
 @echo off
-setlocal enabledelayedexpansion
+setlocal EnableDelayedExpansion
+cd /d "%~dp0"
 
+:: -------------------------------
+:: Friendly Header
+:: -------------------------------
 echo.
-echo =============================================
-echo  RadioExt songInfos.json Generator (Ceiling)
-echo =============================================
-
-REM Ask the user for their radio station name
-set /p STATION=Enter your radio station folder name (e.g. Anarchist Radio):
-echo Processing songs
-echo Creating the file
-echo Please wait.....
-
-set INPUT=mp3s_to_fix
-set OUTPUT=json_file_complete
-
-if not exist "%OUTPUT%" mkdir "%OUTPUT%"
-
-set "firstLine=true"
-
-powershell -NoProfile -Command ^
-  "$station = '%STATION%';" ^
-  "$files = Get-ChildItem 'mp3s_to_fix' -Filter '*.mp3';" ^
-  "$lines = @();" ^
-  "foreach ($file in $files) {" ^
-  "  $path = $file.FullName;" ^
-  "  $duration = & '.\\ffprobe.exe' -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 $path;" ^
-  "  if ($duration -match '^[0-9\\.]+$') {" ^
-  "    $rounded = [math]::Ceiling([double]$duration);" ^
-  "    $key = '\"' + $station + '\\' + $file.Name + '\"';" ^
-  "    $lines += '    ' + $key + ': ' + $rounded;" ^
-  "  }" ^
-  "}" ^
-  "$last = $lines.Count - 1;" ^
-  "for ($i = 0; $i -lt $lines.Count; $i++) {" ^
-  "  if ($i -ne $last) { $lines[$i] += ',' }" ^
-  "}" ^
-  "'{' | Set-Content 'json_file_complete\\songInfos.json';" ^
-  "$lines | Add-Content 'json_file_complete\\songInfos.json';" ^
-  "'}' | Add-Content 'json_file_complete\\songInfos.json';"
-
+echo ===============================================
+echo   📄 songInfos.json Generator - RadioExt Mod
+echo ===============================================
+echo  This script scans your cleaned MP3 files and
+echo  creates a songInfos.json file for your station.
 echo.
-echo Done! songInfos.json created with station name '%STATION%' in '%OUTPUT%' folder.
+echo  INPUT:  completed_files\*.mp3
+echo  OUTPUT: completed_files\songInfos.json
+echo  OUTPUT: logs\
+echo -----------------------------------------------
+echo.
+
+:: -------------------------------
+:: Log Setup
+:: -------------------------------
+if not exist "logs" mkdir "logs"
+set "logfile=logs\generate_songInfos_bat_log.txt"
+echo === songInfos.json Generation Started: %DATE% %TIME% === > "%logfile%"
+
+:: -------------------------------
+:: Folder Setup
+:: -------------------------------
+if not exist "completed_files" (
+    mkdir "completed_files"
+    echo [generate_songInfos.bat] Created completed_files folder. >> "%logfile%"
+)
+
+:: -------------------------------
+:: Check for ffprobe.exe
+:: -------------------------------
+if not exist "ffprobe.exe" (
+    echo ❌ ERROR: ffprobe.exe not found in this folder!
+    echo Please make sure ffprobe.exe is next to this .bat file.
+    echo [generate_songInfos.bat] Missing ffprobe.exe. >> "%logfile%"
+    pause
+    exit /b
+)
+
+:: -------------------------------
+:: Confirm MP3s Exist
+:: -------------------------------
+dir /b "completed_files\*.mp3" >nul 2>&1
+if errorlevel 1 (
+    echo ⚠️  No MP3 files found in completed_files!
+    echo Please run fix_radioEXTmp3s.bat first.
+    echo [generate_songInfos.bat] No MP3s found. >> "%logfile%"
+    pause
+    exit /b
+)
+
+:: -------------------------------
+:: Build songInfos.json with PowerShell
+:: -------------------------------
+echo Generating songInfos.json...
+
+> "%temp%\generate_songInfos.ps1" (
+    echo $songs = @()
+    for %%f in (completed_files\*.mp3) do (
+        echo $duration = & '.\ffprobe.exe' -v error -show_entries format^=duration -of default^=noprint_wrappers^=1:nokey^=1 "completed_files\%%~nxf"
+        echo $ticks = [math]::Floor([double]$duration)
+        echo $songs += [PSCustomObject]@{ name = "%%~nxf"; length = $ticks }
+    )
+    echo $output = @{ songs = $songs }
+    echo $output | ConvertTo-Json -Depth 3 | Set-Content 'completed_files\songInfos.json' -Encoding UTF8
+)
+
+powershell -ExecutionPolicy Bypass -File "%temp%\generate_songInfos.ps1" >> "%logfile%" 2>&1
+del "%temp%\generate_songInfos.ps1"
+
+:: -------------------------------
+:: Result
+:: -------------------------------
+if exist "completed_files\songInfos.json" (
+    echo ✅ songInfos.json created successfully!
+    echo [generate_songInfos.bat] songInfos.json built. >> "%logfile%"
+) else (
+    echo ❌ Failed to create songInfos.json!
+    echo [generate_songInfos.bat] Failed to generate. >> "%logfile%"
+)
+
+echo Log saved to: %logfile%
 pause
+endlocal
+exit /b
