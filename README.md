@@ -3,6 +3,10 @@
 A simple utility toolkit for preparing MP3 files and generating the required JSON metadata.
 A songInfos json can also be created.
 
+I highly recommend using the release package.
+
+👉 [**Click here to download the latest tools (.zip)**](https://github.com/BSchweikart/RadioExt_MP3_Repair_Tools/releases/latest)
+
 Happy modding, chooms. 💿🎙️📡
 
 ### Author's github
