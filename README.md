@@ -66,7 +66,12 @@ If your antivirus flags a false positive:
 | `fix_radioEXTmp3s.bat`    | Cleans your MP3s for the mod (bitrate, metadata, headers)  
 | `build_metadata.bat`      | Prompts you for station details and builds `metadata.json`  
 | `generate_songInfos.bat`  | Scans cleaned MP3s and builds `songInfos.json`  
-| `create_station.bat`      | Guides you through the full setup and generates a Vortex-ready `.zip` mod package  
+| `create_station.bat`      | Guides you through the full setup and generates a Vortex-ready `.zip` mod package
+
+| Files                     | Purpose |
+|---------------------------|---------|
+| `radioStation.lua`        | Debug line added for tick count
+| `metadata.json`           | for automation create 
 
 ---
 
@@ -78,6 +83,7 @@ radioEXT_fixer_utilities/
 ├── mp3s_to_fix/              # Drop your original MP3s here
 ├── logs/                     # All log files from batch scripts
 ├── metadata_template/        # Contains default metadata.json
+├── test lua file/            # Contains edited radioStation.lua
 ├── *.bat                     # All scripts listed above
 ├── ffmpeg.exe                # Must be present here
 ├── ffprobe.exe               # Required for songInfos
