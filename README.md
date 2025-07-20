@@ -1,5 +1,3 @@
-### ❗  IN THE PROCESS OF A FULL UPDATE FULL BAT FILES ARE BEING UPDATED A FULL REWORK. SO FAR THIS IS WORKING ON MY END THIS README WILL BE UPDATED WITH WORKING LINKS  ❗
-
 # 🎧 RadioExt Fixer Utilities
 
 A simple utility toolkit for preparing MP3 files and generating the required JSON metadata.
@@ -90,17 +88,18 @@ radioEXT_fixer_utilities/
 
 ### 🔧 Included Tools
 - Batch tools
-   - [`create_station.bat`]()
-   - [`fix_radioEXTmp3s.bat`]()
-   - [`build_metadata.bat`]()
-   - [`generate_songInfos.bat`]()
+   - [`create_station.bat`](https://github.com/BSchweikart/radioEXT_fixer_utilities/blob/main/radioEXT-mp3-fixer-json-create/create_station.bat)
+   - [`fix_radioEXTmp3s.bat`](https://github.com/BSchweikart/radioEXT_fixer_utilities/blob/main/radioEXT-mp3-fixer-json-create/fix_radioEXTmp3s.bat)
+   - [`build_metadata.bat`](https://github.com/BSchweikart/radioEXT_fixer_utilities/blob/main/radioEXT-mp3-fixer-json-create/build_metadata.bat)
+   - [`generate_songInfos.bat`](https://github.com/BSchweikart/radioEXT_fixer_utilities/blob/main/radioEXT-mp3-fixer-json-create/generate_songInfos.bat)
 
 - These exe's are bundled inside the ZIP, but you may also download them yourself: You may replace the included exe's with ones you trust if preferred.
 - [FFmpeg Official Site](https://ffmpeg.org/download.html)
 - [Gyan.dev FFmpeg Builds](https://www.gyan.dev/ffmpeg/builds/)
 - [LAME MP3 Encoder (SourceForge)](https://lame.sourceforge.io/download.php)
 
-- Template folders (`mp3s_to_fix`, `completed_files`)
+- Template folders (`mp3s_to_fix`, `completed_files`, `metadata_template`)
+- Files (`radioStation.lua`, `metadata.json`)
 - Everything you need in one package.
 
 ---
