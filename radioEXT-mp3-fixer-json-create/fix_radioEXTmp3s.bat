@@ -78,10 +78,9 @@ for %%f in ("mp3s_to_fix\*.mp3") do (
     echo Processing: %%~nxf
     echo Processing: %%~nxf >> "%logfile%"
 
-    ffmpeg -y -hide_banner -i "%%f" ^
+    ffmpeg -y -hide_banner -i "%%~f" ^
         -c:a libmp3lame -b:a 320k ^
         -map_metadata -1 -write_xing 1 -id3v2_version 3 ^
-        -af "areplaygain=track=off" ^
         -metadata TSSE="LAME3.100" ^
         "completed_files\%%~nxf" >> "%logfile%" 2>&1
 
@@ -101,3 +100,4 @@ echo Log saved to: %logfile%
 pause
 endlocal
 exit /b
+
